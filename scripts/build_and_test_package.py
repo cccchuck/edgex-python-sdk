@@ -49,11 +49,11 @@ def main():
     clean_build_artifacts()
     
     # Install build dependencies
-    if not run_command("pip install --upgrade pip build twine", "Installing build dependencies"):
+    if not run_command("pip3 install --upgrade pip build twine", "Installing build dependencies"):
         return 1
-    
+
     # Build the package
-    if not run_command("python -m build", "Building package"):
+    if not run_command("python3 -m build", "Building package"):
         return 1
     
     # Check the package
