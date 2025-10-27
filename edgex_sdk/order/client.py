@@ -392,7 +392,7 @@ class Client:
         }
 
         return await self.async_client.make_authenticated_request(
-            method="POST",
+            method="GET",
             path="/api/v1/private/order/getOrderById",
             data=data,
         )
@@ -419,7 +419,7 @@ class Client:
         }
 
         return await self.async_client.make_authenticated_request(
-            method="POST",
+            method="GET",
             path="/api/v1/private/order/getOrderByClientOrderId",
             data=data,
         )
