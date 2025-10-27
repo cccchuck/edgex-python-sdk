@@ -386,7 +386,7 @@ class Client:
         if not order_id_list:
             raise ValueError("order_id_list must not be empty")
 
-        data = {
+        query_params = {
             "accountId": str(self.async_client.get_account_id()),
             "orderIdList": ",".join(order_id_list),
         }
@@ -394,7 +394,7 @@ class Client:
         return await self.async_client.make_authenticated_request(
             method="GET",
             path="/api/v1/private/order/getOrderById",
-            data=data,
+            params=query_params,
         )
 
     async def get_orders_by_client_order_ids(self, client_order_id_list: List[str]) -> Dict[str, Any]:
@@ -413,7 +413,7 @@ class Client:
         if not client_order_id_list:
             raise ValueError("client_order_id_list must not be empty")
 
-        data = {
+        query_params = {
             "accountId": str(self.async_client.get_account_id()),
             "clientOrderIdList": ",".join(client_order_id_list),
         }
@@ -421,7 +421,7 @@ class Client:
         return await self.async_client.make_authenticated_request(
             method="GET",
             path="/api/v1/private/order/getOrderByClientOrderId",
-            data=data,
+            params=query_params,
         )
 
     async def get_max_order_size(self, contract_id: str, price: float) -> Dict[str, Any]:
