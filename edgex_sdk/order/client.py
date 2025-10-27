@@ -388,12 +388,12 @@ class Client:
 
         data = {
             "accountId": str(self.async_client.get_account_id()),
-            "orderIdList": order_id_list,
+            "orderIdList": ",".join(order_id_list),
         }
 
         return await self.async_client.make_authenticated_request(
             method="POST",
-            path="/api/v1/private/order/getOrderByIdBatch",
+            path="/api/v1/private/order/getOrderById",
             data=data,
         )
 
@@ -415,12 +415,12 @@ class Client:
 
         data = {
             "accountId": str(self.async_client.get_account_id()),
-            "clientOrderIdList": client_order_id_list,
+            "clientOrderIdList": ",".join(client_order_id_list),
         }
 
         return await self.async_client.make_authenticated_request(
             method="POST",
-            path="/api/v1/private/order/getOrderByClientOrderIdBatch",
+            path="/api/v1/private/order/getOrderByClientOrderId",
             data=data,
         )
 

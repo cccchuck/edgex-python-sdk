@@ -1,4 +1,0 @@
-[mcp_servers.context7]
-args = ["-y", "@upstash/context7-mcp", "--api-key", "ctx7sk-94270ca0-e14a-4908-a84e-b0f04057c1d2"]
-command = "pnpx"
-startup_timeout_ms = 20_000
